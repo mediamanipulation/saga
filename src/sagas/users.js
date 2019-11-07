@@ -1,5 +1,5 @@
   
-import {takeEvery, call, fork} from 'redux-saga/effects';
+import {takeEvery, call, fork, put} from 'redux-saga/effects';
 import * as actions from '../actions/users';
 import * as api from '../api/users';
 
@@ -10,12 +10,14 @@ function* getUsers(){
         const result = yield call(api.getUsers);
         console.log(result);
     } catch (e) {
-        
+        // yield put(actions.usersError({
+        //     error: 'An error occurred when trying to get the users' 
+        // }));
     }
 }
 
 function* watchGetUsersRequest(){
-    yield takeEvery(actions.Types.GET_USERS_SUCCESS. getUsers);
+    yield takeEvery(actions.Types.GET_USERS_REQUEST, getUsers);
 }
 const userSagas = [
     fork(watchGetUsersRequest)

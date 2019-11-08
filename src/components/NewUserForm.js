@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Form, FormGroup, Lable, Input, Button} from 'reactstrap'
+import {Form, FormGroup,  Input, Button} from 'reactstrap'
 
 class NewUserForm extends Component {
     state = {
@@ -28,14 +28,14 @@ class NewUserForm extends Component {
         return (
             <Form onSubmit={this.handleSubmit}>
             <FormGroup>
-                <Lable>
+                <lable>
                     First Name
-                </Lable>
+                </lable>
                 <Input required placeholder="First Name" onChange={this.handleFirstNameChange} value={this.state.firstName}>
                 </Input>
-                <Lable>
+                <lable>
                     Last Name
-                </Lable>
+                </lable>
                 <Input required placeholder="Last Name" onChange={this.handleLastNameChange} value={this.state.lastName}>
                 </Input>
             </FormGroup>

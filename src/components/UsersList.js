@@ -1,6 +1,5 @@
 import React from 'react';
 import {ListGroup, ListGroupItem, Button} from 'reactstrap';
-import { SSL_OP_NO_TLSv1_1 } from 'constants';
 
 const UsersList = ({users}) =>{
     return(
@@ -21,11 +20,11 @@ const UsersList = ({users}) =>{
                 return (
                     <ListGroupItem key={user.id}>
                     <section style={{display: 'flex'}}>
-                        <div  style={{flexGrow: 1}}>
+                        <div  style={{flexGrow: 1, margin: 'auto 0'}}>
                             {user.firstName} {user.lastName}
                         </div>
                         <Button outline color='danger' >
-
+                            Delete
                         </Button>
                     </section>
                     </ListGroupItem>

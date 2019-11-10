@@ -4,16 +4,22 @@ const INITIAL_STATE = {
     items: []
 };
 
-export default function users(state = INITIAL_STATE, action){
-    // eslint-disable-next-line default-case
-    switch(action.type ){
+export default function users(state = INITIAL_STATE, action) {
+    switch (action.type) {
         case Types.GET_USERS_SUCCESS:{
-            return{
+            return {
+                ...state,
                 items: action.payload.items
             }
         }
-        default:{
+        case Types.USERS_ERROR: {
+            return {
+                ...state,
+                error: action.payload.error
+            }
+        }
+        default: {
             return state;
-        } 
+        }
     }
 }
